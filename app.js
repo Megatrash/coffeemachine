@@ -15,4 +15,4 @@ app.get('/boil', function(req, res) {
     res.end(boilerCache.get("boiler"));
 });
 
-app.listen(8080);
+app.listen(process.env.npm_package_config_port);
