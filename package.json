@@ -1,0 +1,16 @@
+{
+  "name": "coffeemachine",
+  "version": "1.0.0",
+  "description": "Trigger coffee boiling",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "node-cache": "^3.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mibou",
+  "license": "ISC"
+}
