@@ -27,7 +27,7 @@ app.set('port', (process.env.PORT || 5000));
 
 app.post('/sudoboil', function(req, res) {
     res.render("okboil");
-    boilerCache.set("boiler", "sudo boil", 10);
+    boilerCache.set("boiler", "sudo boil", 300);
 });
 
 app.get('/sudoboil', function(req, res) {
