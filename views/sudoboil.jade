@@ -1,0 +1,9 @@
+doctype
+html
+  head
+    title #{site.title}
+  body
+    header
+      h1 Boil ?
+      form(action="/sudoboil", method="POST")
+        input(type="submit" value="$ sudo boil")
