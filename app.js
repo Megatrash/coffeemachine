@@ -4,6 +4,8 @@ var app = express();
 var NodeCache = require( "node-cache" );
 var boilerCache = new NodeCache( { stdTTL: 10, checkperiod: 2 } );
 
+app.set('port', (process.env.PORT || 5000));
+
 app.get('/sudoboil', function(req, res) {
     res.setHeader('Content-Type', 'text/plain');
     res.end('Vous êtes à l\'accueil');
@@ -15,4 +17,7 @@ app.get('/boil', function(req, res) {
     res.end(boilerCache.get("boiler"));
 });
 
-app.listen(process.env.npm_package_config_port);
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
+
