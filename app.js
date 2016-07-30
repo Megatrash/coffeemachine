@@ -41,9 +41,23 @@ app.get('/sudoboil', function(req, res) {
 });
 
 app.get('/temp', function(req, res) {
+    var ambiant = parseFloat(tempCache.get("ambiant"));
+    var object = parseFloat(tempCache.get("object"));
+    if (Math.abs(ambiant-object) < 10)
+        message = "Y a un café là ?"
+    else if (object <= 45)
+        message = "Café froid"
+    else if (object <= 50)
+        message = "Café tiède"
+    else if (object <= 55)
+        message = "Café à température idéale"
+    else
+        message = "Café brûlant !"
+
     res.render("temp", {
         'ambiant': tempCache.get("ambiant"),
-        'object': tempCache.get("object")
+        'object': tempCache.get("object"),
+        'message': message
     });
 });
 
